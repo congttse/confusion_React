@@ -2,6 +2,19 @@ import logo from './logo.svg';
 import './App.css';
 import Hello from './Component/Hello';
 import Hello2 from './Component/Hello2';
+import {Navbar, NavbarBrand} from 'reactstrap';
+
+function App(){
+  return(
+    <div className='App'>
+      <Navbar dark color='primary'>
+        <div className='container'>
+          <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
+        </div>
+      </Navbar>
+    </div>
+  );
+}
 
 function formatName(user) {
   return user.firstName + ' ' + user.lastName;
@@ -16,28 +29,28 @@ const elements = (
   </h1>
 );
 
-function App() {
-  // const name = 'Jost Perez';
-  // const element = <h1>Hello, {name}</h1>;
-  const data = { id: "1", name: "Bao Tran" };
-  return (
-    // <div>
-    //   <h1>{element}</h1>
-    //   <h1> Hello</h1>
-    //   <h1> {name}</h1>
-    //   <h1>{elements}</h1>
-    // </div>
-    <div>
-      <Hello msg="Helo, Tran" user={data} />
-      <Hello2 msg="Have fun"></Hello2>
-    </div>
-  );
-  // return (
-  //   <div className="App">
-  //     <h1>Hello World!</h1>
-  //   </div>
-  // );
-}
+// function App() {
+//   // const name = 'Jost Perez';
+//   // const element = <h1>Hello, {name}</h1>;
+//   const data = { id: "1", name: "Bao Tran" };
+//   return (
+//     // <div>
+//     //   <h1>{element}</h1>
+//     //   <h1> Hello</h1>
+//     //   <h1> {name}</h1>
+//     //   <h1>{elements}</h1>
+//     // </div>
+//     <div>
+//       <Hello msg="Helo, Tran" user={data} />
+//       <Hello2 msg="Have fun"></Hello2>
+//     </div>
+//   );
+//   // return (
+//   //   <div className="App">
+//   //     <h1>Hello World!</h1>
+//   //   </div>
+//   // );
+// }
 // đưa giá trị 'elements' làm nội dung của thẻ chứa id là root
 // ReactDOM.render(
 //   elements,
