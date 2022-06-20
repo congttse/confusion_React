@@ -14,58 +14,85 @@ import Garage from './Component/Garage';
 import Welcome from './Component/Welcome';
 import Car from './Component/Car';
 import Menu from './Component/MenuComponent';
+import PresentationalComponent from './Component/PresentationalComponent';
+import ContainerComponent from './Component/ContainerComponent';
+import { BrowserRouter, Switch } from 'react-router-dom';
+import { Routes, Route, Link } from "react-router-dom";
+import Layout from './Component/Layout';
+import Home from './Component/Home';
+import Blogs from './Component/Blogs';
+import Contact from './Component/Contact';
+import NoPage from './Component/NoPage';
+import { Component } from 'react';
+import { DISHES } from './shared/dishes';
 
-const cities = ['Jaipiur', 'Jodhpur', 'Udaipur', 'Pune', 'Chandigarh'];
-const comment = {
-  date: new Date(),
-  text: 'I hope you enjoy my restaurant!',
-  author: {
-    name: 'Alberto',
-    avatarUrl: './assets/images/alberto.png'
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dishes: DISHES
+    };
+  }
+  render() {
+    return (
+      <Menu dishes={this.state.dishes}></Menu>
+    )
   }
 }
 
-const names= cities.map( (c, index)=>{ return <li key={index}>{c}</li>});
 
-function App() {
-  return (
-    <div className='App'>
-      {/* <Navbar dark color='primary'>
-        <div className='container'>
-          <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
-        </div>
-      </Navbar>
-      <Comment date={comment.date} text={comment.text} author={comment.author}></Comment>
-      <Account></Account>
-      <Store></Store>
-      <Store></Store> 
-      <Stock></Stock>
-      <Warning></Warning>
-      <Form></Form>
-      <ul>{names}</ul>
-      <Garage></Garage>
-      <Welcome name="Van"></Welcome>
-      <Welcome name="Thuy Kieu"></Welcome>
-      <Welcome name="Thuy Van"></Welcome>
-      <Comment date={comment.date} text={comment.text} author={comment.author}/>
-      <Car></Car> */}
-      <Menu></Menu>
-    </div>
-  );
-}
+// const cities = ['Jaipiur', 'Jodhpur', 'Udaipur', 'Pune', 'Chandigarh'];
+// const comment = {
+//   date: new Date(),
+//   text: 'I hope you enjoy my restaurant!',
+//   author: {
+//     name: 'Alberto',
+//     avatarUrl: './assets/images/alberto.png'
+//   }
+// }
 
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
-}
-const user = {
-  firstName: 'Harper',
-  lastName: 'Perez'
-};
-const elements = (
-  <h1>
-    Hello, {formatName(user)}!
-  </h1>
-);
+// const names = cities.map((c, index) => { return <li key={index}>{c}</li> });
+
+
+// function App() {
+//   return (
+//     <div className='App'>
+//       {/* <Navbar dark color='primary'>
+//         <div className='container'>
+//           <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
+//         </div>
+//       </Navbar>
+//       <Comment date={comment.date} text={comment.text} author={comment.author}></Comment>
+//       <Account></Account>
+//       <Store></Store>
+//       <Store></Store> 
+//       <Stock></Stock>
+//       <Warning></Warning>
+//       <Form></Form>
+//       <ul>{names}</ul>
+//       <Garage></Garage>
+//       <Welcome name="Van"></Welcome>
+//       <Welcome name="Thuy Kieu"></Welcome>
+//       <Welcome name="Thuy Van"></Welcome>
+//       <Comment date={comment.date} text={comment.text} author={comment.author}/>
+//       <Car></Car> */}
+//       {/*<Menu></Menu>*/}
+//       {/* <ContainerComponent></ContainerComponent> */}
+//       <BrowserRouter>
+//         <div>
+//           <Switch>
+//             <Route exact path="/" component={Layout}></Route>
+//             <Route path="/Home" component={Home}></Route>
+//             <Route path="/Blogs" component={Blogs}></Route>
+//             <Route path="/Contact" component={Contact}></Route>
+//             <Route path="/*" component={NoPage}></Route>
+//           </Switch>
+//         </div>
+//       </BrowserRouter>
+//     </div>
+//   );
+// }
+
 
 
 
