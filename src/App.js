@@ -25,7 +25,9 @@ import Contact from './Component/Contact';
 import NoPage from './Component/NoPage';
 import { Component } from 'react';
 import { DISHES } from './shared/dishes';
-
+import DishDetail from './Component/DishdetailComponent';
+import Profile from './Component/Profile';
+import MyForm from './Component/MyForm';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +37,9 @@ class App extends Component {
   }
   render() {
     return (
-      <Menu dishes={this.state.dishes}></Menu>
+      <div>
+        <Menu dishes={this.state.dishes}></Menu>
+      </div>
     )
   }
 }
@@ -85,10 +89,12 @@ class App extends Component {
 //             <Route path="/Home" component={Home}></Route>
 //             <Route path="/Blogs" component={Blogs}></Route>
 //             <Route path="/Contact" component={Contact}></Route>
+//             <Route path="/Profile/:isLogin/:name" component={Profile}></Route>
 //             <Route path="/*" component={NoPage}></Route>
 //           </Switch>
 //         </div>
 //       </BrowserRouter>
+//       <MyForm></MyForm>
 //     </div>
 //   );
 // }
