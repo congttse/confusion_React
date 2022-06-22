@@ -28,19 +28,18 @@ import { DISHES } from './shared/dishes';
 import DishDetail from './Component/DishdetailComponent';
 import Profile from './Component/Profile';
 import MyForm from './Component/MyForm';
+import Main from './Component/MainComponent';
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      dishes: DISHES
-    };
   }
   render() {
     return (
-      <div>
-        <Menu dishes={this.state.dishes}></Menu>
+      <div className='App'>
+        <Main></Main>
       </div>
-    )
+    );
   }
 }
 
