@@ -29,19 +29,28 @@ import DishDetail from './Component/DishdetailComponent';
 import Profile from './Component/Profile';
 import MyForm from './Component/MyForm';
 import Main from './Component/MainComponent';
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className='App'>
-        <Main></Main>
-      </div>
-    );
-  }
-}
+import MyUncontrolledForm from './Component/MyUncontrolledForm';
+import { Provider } from 'react-redux';
+import { ConfigureStore } from './Component/ConfigureStore';
+import { ConfigureStore2 } from './Component/ConfigureStore2';
+import Counter from './Component/Counter';
+import ContactPage from './Component/ContactPage';
+import { ConfigureStore3 } from './myredux/ConfigureStore3';
+import TestComponent from './myredux/TestComponent';
+import { ConfigureStore4 } from './myreduxthunk/ConfigureStore4';
+import TestReduxThunk from './myreduxthunk/TestReduxThunk';
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return (
+//       <div className='App'>
+//         <Main></Main>
+//       </div>
+//     );
+//   }
+// }
 
 
 // const cities = ['Jaipiur', 'Jodhpur', 'Udaipur', 'Pune', 'Chandigarh'];
@@ -56,47 +65,54 @@ class App extends Component {
 
 // const names = cities.map((c, index) => { return <li key={index}>{c}</li> });
 
-
-// function App() {
-//   return (
-//     <div className='App'>
-//       {/* <Navbar dark color='primary'>
-//         <div className='container'>
-//           <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
-//         </div>
-//       </Navbar>
-//       <Comment date={comment.date} text={comment.text} author={comment.author}></Comment>
-//       <Account></Account>
-//       <Store></Store>
-//       <Store></Store> 
-//       <Stock></Stock>
-//       <Warning></Warning>
-//       <Form></Form>
-//       <ul>{names}</ul>
-//       <Garage></Garage>
-//       <Welcome name="Van"></Welcome>
-//       <Welcome name="Thuy Kieu"></Welcome>
-//       <Welcome name="Thuy Van"></Welcome>
-//       <Comment date={comment.date} text={comment.text} author={comment.author}/>
-//       <Car></Car> */}
-//       {/*<Menu></Menu>*/}
-//       {/* <ContainerComponent></ContainerComponent> */}
-//       <BrowserRouter>
-//         <div>
-//           <Switch>
-//             <Route exact path="/" component={Layout}></Route>
-//             <Route path="/Home" component={Home}></Route>
-//             <Route path="/Blogs" component={Blogs}></Route>
-//             <Route path="/Contact" component={Contact}></Route>
-//             <Route path="/Profile/:isLogin/:name" component={Profile}></Route>
-//             <Route path="/*" component={NoPage}></Route>
-//           </Switch>
-//         </div>
-//       </BrowserRouter>
-//       <MyForm></MyForm>
-//     </div>
-//   );
-// }
+const store = ConfigureStore4();
+function App() {
+  return (
+    <div className='App'>
+      {/* <Navbar dark color='primary'>
+        <div className='container'>
+          <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
+        </div>
+      </Navbar>
+      <Comment date={comment.date} text={comment.text} author={comment.author}></Comment>
+      <Account></Account>
+      <Store></Store>
+      <Store></Store> 
+      <Stock></Stock>
+      <Warning></Warning>
+      <Form></Form>
+      <ul>{names}</ul>
+      <Garage></Garage>
+      <Welcome name="Van"></Welcome>
+      <Welcome name="Thuy Kieu"></Welcome>
+      <Welcome name="Thuy Van"></Welcome>
+      <Comment date={comment.date} text={comment.text} author={comment.author}/>
+      <Car></Car> */}
+      {/*<Menu></Menu>*/}
+      {/* <ContainerComponent></ContainerComponent> */}
+      {/* <BrowserRouter>
+        <div>
+          <Switch>
+            <Route exact path="/" component={Layout}></Route>
+            <Route path="/Home" component={Home}></Route>
+            <Route path="/Blogs" component={Blogs}></Route>
+            <Route path="/Contact" component={Contact}></Route>
+            <Route path="/Profile/:isLogin/:name" component={Profile}></Route>
+            <Route path="/*" component={NoPage}></Route>
+          </Switch>
+        </div>
+      </BrowserRouter> */}
+      {/* <MyForm></MyForm>
+      <MyUncontrolledForm></MyUncontrolledForm> */}
+      <Provider store={store}>
+          {/* <Counter></Counter> */}
+          {/* <ContactPage></ContactPage> */}
+          {/* <TestComponent></TestComponent> */}
+          <TestReduxThunk></TestReduxThunk>
+      </Provider>
+    </div>
+  );
+}
 
 
 
