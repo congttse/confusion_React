@@ -21,7 +21,7 @@ function RenderComments({ comments }) {
         return (
             <div key={item.id}>
                 <p>{item.comment}</p>
-                <p>-- {item.author}, {dateFormat(item.date, "fullDate")}</p>
+                <p>{item.author}</p>
             </div>
         )
     })

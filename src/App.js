@@ -39,31 +39,6 @@ import { ConfigureStore3 } from './myredux/ConfigureStore3';
 import TestComponent from './myredux/TestComponent';
 import { ConfigureStore4 } from './myreduxthunk/ConfigureStore4';
 import TestReduxThunk from './myreduxthunk/TestReduxThunk';
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   render() {
-//     return (
-//       <div className='App'>
-//         <Main></Main>
-//       </div>
-//     );
-//   }
-// }
-
-
-// const cities = ['Jaipiur', 'Jodhpur', 'Udaipur', 'Pune', 'Chandigarh'];
-// const comment = {
-//   date: new Date(),
-//   text: 'I hope you enjoy my restaurant!',
-//   author: {
-//     name: 'Alberto',
-//     avatarUrl: './assets/images/alberto.png'
-//   }
-// }
-
-// const names = cities.map((c, index) => { return <li key={index}>{c}</li> });
 
 const store = ConfigureStore4();
 function App() {
@@ -90,26 +65,20 @@ function App() {
       <Car></Car> */}
       {/*<Menu></Menu>*/}
       {/* <ContainerComponent></ContainerComponent> */}
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <div>
-          <Switch>
+          {/* <Switch>
             <Route exact path="/" component={Layout}></Route>
             <Route path="/Home" component={Home}></Route>
             <Route path="/Blogs" component={Blogs}></Route>
             <Route path="/Contact" component={Contact}></Route>
             <Route path="/Profile/:isLogin/:name" component={Profile}></Route>
             <Route path="/*" component={NoPage}></Route>
-          </Switch>
+          </Switch> */}
+          <Main></Main>
         </div>
-      </BrowserRouter> */}
-      {/* <MyForm></MyForm>
-      <MyUncontrolledForm></MyUncontrolledForm> */}
-      <Provider store={store}>
-          {/* <Counter></Counter> */}
-          {/* <ContactPage></ContactPage> */}
-          {/* <TestComponent></TestComponent> */}
-          <TestReduxThunk></TestReduxThunk>
-      </Provider>
+      </BrowserRouter>
+      
     </div>
   );
 }

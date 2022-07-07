@@ -3,8 +3,10 @@ import { Navbar, NavbarBrand } from 'reactstrap'
 import Menu from './MenuComponent';
 import DishDetail from './DishdetailComponent';
 import { DISHES } from '../shared/dishes';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 
-export default class Main extends Component {
+class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,14 +20,13 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-                <Navbar dark color="primary">
-                    <div className='container'>
-                        <NavbarBrand href='/'>Ristorante Con Fusion</NavbarBrand>
-                    </div>
-                </Navbar>
+                <Header></Header>
                 <Menu dishes={this.state.dishes} onClick={(dishId)=>this.onDishSelect(dishId)}></Menu>
                 <DishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]}></DishDetail>
+                <Footer></Footer>
             </div>
         );
     }
 }
+
+export default Main;
