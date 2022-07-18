@@ -3,7 +3,7 @@ import {Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reacts
 function RenderCard({item}){
     return(
         <Card>
-            <CardImg src={item.image} alt={item.name} width="50px"></CardImg>
+            <CardImg src={item.image} alt={item.name} ></CardImg>
             <CardBody>
                 <CardTitle>{item.name}</CardTitle>
                 {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null }
@@ -23,7 +23,7 @@ function Home(props){
                 <div className='col-12 col-md m-1'>
                     <RenderCard item={props.promotion}></RenderCard>
                 </div>
-                <div>
+                <div className='col-12 col-md m-1'>
                     <RenderCard item={props.leader}></RenderCard>
                 </div>
             </div>
